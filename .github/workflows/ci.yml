@@ -1,17 +1,15 @@
-name: "CI Main Workflow"
+name: "CI (Integração Continua): Main Workflow"
 
 on:
   pull_request:
     types: [opened, synchronize]
 
-jobs: 
+jobs:
   linter:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-
-      - name: Run yarn install
-        run: yarn
-
+      - name: Run Installation
+        run: yarn install
       - name: Run Linter
         run: yarn lint
